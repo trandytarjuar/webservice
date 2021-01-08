@@ -1,6 +1,6 @@
 const mongodb = require('mongoose')
 
-const UserDB = new mongodb.Schema({
+const CustomerDB = new mongodb.Schema({
     nama: {
         type :String,
         require : [true, "masukkan nama anda"],
@@ -15,12 +15,10 @@ const UserDB = new mongodb.Schema({
 
     }, address : {
         type : String
-    }, image : {
-        type : File
     }
 
 });
 
-const Users = mongodb.model('users',UserDB);
+const Customer = mongodb.model('users',CustomerDB);
 
-module.exports = Users;
+module.exports = Customer;

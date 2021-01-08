@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const mongodb = require('mongoose');
 
-const usersRouter = require('./router/usersRouter');
+const customerRouter = require('./router/customerRouter');
 
 dotenv.config({path:'./config.env'})
 const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD)
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/users',usersRouter);
+app.use('/customer',customerRouter);
 
 app.listen(port,()=>{
     console.log("server siapp")
